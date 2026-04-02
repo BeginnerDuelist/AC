@@ -1,0 +1,19 @@
+# Secrete și mediu local (nu comita)
+.env
+.env.local
+.env.*.local
+
+# SQLite local (proiectul folosește PostgreSQL)
+app.db
+app.db-shm
+app.db-wal
+
+# Build
+bin/
+obj/
+out/
+
+# IDE
+.vs/
+.vscode/
+*.user

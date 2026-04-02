@@ -1,0 +1,30 @@
+﻿@model SimpleAuthApp.Models.HomeIndexViewModel
+@{
+    ViewData["Title"] = "Acasă";
+}
+
+<div class="text-center">
+    <h1 class="display-5 mb-4">SimpleAuthApp</h1>
+
+    @if (Model.IsAuthenticated)
+    {
+        <div class="card mx-auto shadow-sm" style="max-width: 32rem;">
+            <div class="card-header bg-success text-white">
+                Ești autentificat
+            </div>
+            <div class="card-body text-start">
+                <p class="mb-2"><strong>ID utilizator:</strong> <code>@Model.UserId</code></p>
+                <p class="mb-2"><strong>Nume utilizator:</strong> @(Model.UserName ?? "—")</p>
+                <p class="mb-0"><strong>Email:</strong> @(Model.Email ?? "—")</p>
+            </div>
+        </div>
+    }
+    else
+    {
+        <p class="lead">Înregistrează-te sau autentifică-te pentru a vedea datele contului tău.</p>
+        <p>
+            <a class="btn btn-primary me-2" asp-area="Identity" asp-page="/Account/Register">Înregistrare</a>
+            <a class="btn btn-outline-primary" asp-area="Identity" asp-page="/Account/Login">Autentificare</a>
+        </p>
+    }
+</div>

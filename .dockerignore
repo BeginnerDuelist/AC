@@ -1,0 +1,14 @@
+**/.dockerignore
+**/.git
+**/.env
+**/.env.*
+!**/.env.example
+**/bin
+**/obj
+**/out
+**/.vs
+**/.vscode
+**/*.user
+**/app.db
+**/app.db-shm
+**/app.db-wal
