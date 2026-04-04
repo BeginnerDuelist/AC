@@ -1,0 +1,20 @@
+# Necesită Ingress controller (ex. Traefik în k3s / Rancher Desktop).
+# Adaugă în C:\Windows\System32\drivers\etc\hosts:  127.0.0.1 simpleauth.local
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: web
+  namespace: simpleauth
+spec:
+  ingressClassName: traefik
+  rules:
+    - host: simpleauth.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: web
+                port:
+                  number: 8080
